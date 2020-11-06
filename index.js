@@ -15,7 +15,9 @@ const tapeAlphabet = _(machine.transitions)
   .value();
 
 // arrow to use when rejection
-const REJECT_ARROW_LABEL = ["reject", "_", "R"];
+const REJECT_ARROW_LABEL = [machine.reject, "_", "R"];
+// arrow to use when accept
+const ACCEPT_ARROW_LABEL = [machine.accept, "_", "R"];
 
 const transitions = _(machine.transitions)
   .mapValues((arrowLabels) =>
@@ -23,7 +25,9 @@ const transitions = _(machine.transitions)
       // fill in rejection arrows when letter is not present
       if (letter in arrowLabels) {
         const arrow = arrowLabels[letter];
-        if (arrow.length === 3) {
+        if (arrow === "accept") {
+          return [letter, ...ACCEPT_ARROW_LABEL];
+        } else if (arrow.length === 3) {
           return [letter, ...arrow];
         } else if (arrow.length === 2) {
           // length 2 is shorthand for non-write transition
