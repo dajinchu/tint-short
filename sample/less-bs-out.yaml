@@ -1,0 +1,20 @@
+start: start
+accept: accept
+reject: reject
+transitions:
+  - [start, _, reject, _, R]
+  - [start, a, find_b, _, R]
+  - [start, b, find_a, _, R]
+  - [start, x, start, _, R]
+  - [find_a, _, reject, _, R]
+  - [find_a, a, return, x, L]
+  - [find_a, b, find_a, b, R]
+  - [find_a, x, find_a, x, R]
+  - [find_b, _, accept, _, R]
+  - [find_b, a, find_b, a, R]
+  - [find_b, b, return, x, L]
+  - [find_b, x, find_b, x, R]
+  - [return, _, start, _, R]
+  - [return, a, return, a, L]
+  - [return, b, return, b, L]
+  - [return, x, return, x, L]

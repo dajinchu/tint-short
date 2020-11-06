@@ -1,6 +1,41 @@
 {
+  "name": "tint-short",
+  "version": "0.0.0",
+  "author": "dajinchu @dajinchu",
+  "bin": {
+    "tint-short": "./bin/run"
+  },
+  "bugs": "https://github.com/dajinchu/tint-short/issues",
   "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
     "js-yaml": "^3.14.0",
     "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/dajinchu/tint-short",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "tint-short"
+  },
+  "repository": "dajinchu/tint-short",
+  "scripts": {
+    "prepack": "oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
   }
 }

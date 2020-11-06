@@ -3,6 +3,10 @@
 Write turing machines for NU Theory of Comp in an simpler format so they're less confusing and easier to debug. Transpiles to
 [tint](https://github.com/cjcodell1/tint)
 
+# Usage
+
+`npx tint-short INFILE OUTFILE` to compile short machine INFILE to OUTFILE
+
 # Format
 
 Everything is the same, except the transitions list looks like:

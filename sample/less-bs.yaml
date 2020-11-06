@@ -1,0 +1,24 @@
+start: start
+
+accept: accept
+reject: reject
+
+transitions:
+  start:
+    a: [ find_b, _, R]
+    b: [ find_a, _, R]
+    x: [ start, _, R]
+  find_a:
+    a: [ return, x, L]
+    b: [ find_a, R]
+    x: [ find_a, R]
+  find_b:
+    _: accept
+    a: [ find_b, R]
+    b: [ return, x, L]
+    x: [ find_b, R]
+  return:
+    _: [ start, R]
+    a: [ return, L]
+    b: [ return, L]
+    x: [ return, L]
