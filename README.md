@@ -11,17 +11,30 @@ Everything is the same, except the transitions list looks like:
 ```yaml
 transitions:
   state:
-    # from state, if letter "in," transition to new_state, writing "out" and moving dir on the tape
-    in: [new_state, out, dir] 
+    # Write new letter
+    # from state, if letter "a" transition to new_state, write "out" and move the tape
+    a: [new_state, out, R] 
 
-    # from state, if letter "in," transition to new_state, NOT writing and moving dir on the tape
-    in: [new_state, dir] 
+    # Don't write (write same letter)
+    # from state, if letter "b" transition to new_state, and move the tape
+    b: [new_state, R] 
 
-    # from state, if letter "in," accept
-    in: accept 
+    # Accept
+    # from state, if letter "c" accept
+    c: accept 
 ```
 
-**Letters that result in rejection do NOT need to be specified.**
+**Letters that result in rejection do NOT need to be specified. (sort of like an NFA)**
+
+this would compile to:
+```yaml
+transitions:
+  - [state, _, reject, _, R] 
+  - [state, a, new_state, out, R] 
+  - [state, b, new_state, b, R] 
+  - [state, c, accept, _, R]
+  - [state, d, reject, _, R] # If d is a possible letter, a reject gets auto-inserted
+```
 
 ## Example
 
