@@ -5,7 +5,7 @@ Write turing machines for NU Theory of Comp in an simpler format so they're less
 
 # Usage
 
-`npx tint-short INFILE OUTFILE` to compile short machine INFILE to OUTFILE
+`npx dajinchu/tint-short INFILE OUTFILE` to compile short machine INFILE to OUTFILE
 
 # Format
 
