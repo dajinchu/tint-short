@@ -1,13 +1,11 @@
-# Tint Short
-
 Write turing machines for NU Theory of Comp in an simpler format so they're less confusing and easier to debug. Transpiles to
 [tint](https://github.com/cjcodell1/tint)
 
-# Usage
+## Usage
 
 `npx dajinchu/tint-short INFILE OUTFILE` to compile short machine INFILE to OUTFILE
 
-# Format
+## Format
 
 Everything is the same, except the transitions list looks like:
 ```yaml
@@ -20,7 +18,7 @@ transitions:
 
 Letters that result in rejection do NOT need to be specified.
 
-# Example
+## Example
 
 A turing machine that decides whether strings over {a, b} have more a's than b's:
 
