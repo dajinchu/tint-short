@@ -3,6 +3,7 @@ Write turing machines for NU Theory of Comp in an simpler format so they're less
 
 ## Usage
 
+You do not need to clone this repo. Just install node.js and use `npx` in your terminal:
 `npx dajinchu/tint-short INFILE OUTFILE` to compile short machine INFILE to OUTFILE. IN should be a `.yaml`
 
 See [samples](https://github.com/dajinchu/tint-short/tree/master/sample)
