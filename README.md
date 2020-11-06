@@ -11,9 +11,14 @@ Everything is the same, except the transitions list looks like:
 ```yaml
 transitions:
   state:
-    in: [new_state, out, dir] # from state, if letter "in," transition to new_state, writing "out" and moving dir on the tape
-    in: [new_state, dir] # from state, if letter "in," transition to new_state, **not writing** and moving dir on the tape
-    in: accept # from state, if letter "in," accept
+    # from state, if letter "in," transition to new_state, writing "out" and moving dir on the tape
+    in: [new_state, out, dir] 
+
+    # from state, if letter "in," transition to new_state, **not writing** and moving dir on the tape
+    in: [new_state, dir] 
+
+    # from state, if letter "in," accept
+    in: accept 
 ```
 
 Letters that result in rejection do NOT need to be specified.
